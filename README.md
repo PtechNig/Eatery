@@ -34,7 +34,7 @@ This project is a server-side application designed for an eatery, focusing on ro
 1. **Clone the Repository**:
    ```sh
    git clone https://github.com/PtechNig/Eatery.git
-   cd eatery-server-app
+   cd Eatery
    ```
 
 2. **Install Dependencies**:
@@ -100,3 +100,7 @@ To contribute, follow these steps:
 4. Push to the branch (`git push origin feature-branch`).
 5. Open a pull request.
 
+
+## Demo
+
+https://documenter.getpostman.com/view/32868844/2sA3XTdKS6
