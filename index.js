@@ -3,8 +3,10 @@ const app = express()
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 dotenv.config({path:'./config.env'})
-const menuRoute = require('./routes/menuRoute')
+const productRoute = require('./routes/productRoute')
 const userRoute = require('./routes/userRoute')
+const cors = require('cors')
+const path = require('path')
 
 
 // DB connection
@@ -25,7 +27,7 @@ const PORT = process.env.PORT || 8080
 app.get('/', (req, res) =>{
     res.status(200).json({
         status:'success',
-        message:'Welcome to my Eatery App'
+        message:'Welcome to my Shopping App'
     })
 })
 
@@ -33,12 +35,14 @@ app.get('/', (req, res) =>{
     setting up middlewares 
     body parser middlewares
  */
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // routes middlewares
-app.use('/api/v1/eatery', menuRoute)
-app.use('/api/v1/eatery', userRoute)
+app.use('/api/v1/shopping', productRoute)
+app.use('/api/v1/shopping', userRoute)
 
 
 // page not found route 
