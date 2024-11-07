@@ -41,8 +41,8 @@ app.use(express.urlencoded({extended: true}))
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // routes middlewares
-app.use('/api/v1/shopping', productRoute)
-app.use('/api/v1/shopping', userRoute)
+app.use('/shopping', productRoute)
+app.use('/shopping', userRoute)
 
 
 // page not found route 
